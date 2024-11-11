@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin:0; overflow:hidden;">
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+        <a-marker type="pattern" preset="hiro">
+            <a-entity position="-0.25 0 0" geometry="primitive: box;" material="src: url(Texturas/Bark014_1K-JPG_Color.jpg);
+            roughnessMap: url(Texturas/Bark014_1K-JPG_Roughness.jpg); normalMap: url(Texturas/Bark014_1K-JPG_NormalGL.jpg); repeat: 0.5 0.5;" scale= "0.013 0.5 0.5"></a-entity>
+
+            <a-entity position="0.25 0 0" geometry="primitive: box;" material="src: url(Texturas/Bark014_1K-JPG_Color.jpg);
+            roughnessMap: url(Texturas/Bark014_1K-JPG_Roughness.jpg); normalMap: url(Texturas/Bark014_1K-JPG_NormalGL.jpg); repeat: 0.5 0.5;" scale= "0.013 0.5 0.5"></a-entity>
+
+            <a-entity position="0 0.05 -0.25" geometry="primitive: box;" material="src: url(Texturas/Bark014_1K-JPG_Color.jpg);
+            roughnessMap: url(Texturas/Bark014_1K-JPG_Roughness.jpg); normalMap: url(Texturas/Bark014_1K-JPG_NormalGL.jpg); repeat: 0.5 0.5;" scale= "0.013 0.5 0.5" rotation="0 90 0"></a-entity>
+
+            <a-entity position="0 0 0.25" geometry="primitive: box;" material="src: url(Texturas/Bark014_1K-JPG_Color.jpg);
+            roughnessMap: url(Texturas/Bark014_1K-JPG_Roughness.jpg); normalMap: url(Texturas/Bark014_1K-JPG_NormalGL.jpg); repeat: 0.5 0.5;" scale= "0.013 0.5 0.5" rotation="0 90 0"></a-entity>
+
+            <a-entity position="0.005 0.151 -0.260" geometry="primitive: box;" material="src: url(Texturas/Wicker013_1K-JPG_Color.jpg);
+            roughnessMap: url(Texturas/Wicker013_1K-JPG_Roughness.jpg); normalMap: url(Texturas/Wicker013_1K-JPG_NormalGL.jpg); repeat: 0.5 0.5;" scale= "0.013 0.282 0.140" rotation="0.341 90.141 0.011"></a-entity>
+
+            <a-entity position="-0.177 0.331 0" geometry="primitive: box;" material="src: url(Texturas/RoofingTiles014A_1K-JPG_Color.jpg);
+            roughnessMap: url(Texturas/RoofingTiles014A_1K-JPG_Roughness.jpg); normalMap: url(Texturas/RoofingTiles014A_1K-JPG_NormalGL.jpg); repeat: 0.5 0.5;" scale= "0.5 0.5 0.01" rotation="45 90 0"></a-entity>
+
+            <a-entity position="0.177 0.331 0" geometry="primitive: box;" material="src: url(Texturas/RoofingTiles014A_1K-JPG_Color.jpg);
+            roughnessMap: url(Texturas/RoofingTiles014A_1K-JPG_Roughness.jpg); normalMap: url(Texturas/RoofingTiles014A_1K-JPG_NormalGL.jpg); repeat: 0.5 0.5;" scale= "0.5 0.5 0.01" rotation="-45 90 0"></a-entity>
+        </a-marker>
+
+        <a-entity camera>
+        </a-entity>
+    </a-scene>
+</body>
+</html>
