@@ -137,12 +137,12 @@ gltf-model="#modelo7" scale=".01 .01 .01" rotation="0 90 -90" position="0 0 0" c
     });
 
     
-    document.querySelector('[value="16"]').addEventListener('markerFound', function () {
+    document.querySelector('[value="15"]').addEventListener('markerFound', function () {
         audio_micro.play();
     });
 
   
-    document.querySelector('[value="16"]').addEventListener('markerLost', function () {
+    document.querySelector('[value="15"]').addEventListener('markerLost', function () {
         audio_micro.pause();
         audio_micro.currentTime = 0;
     });
