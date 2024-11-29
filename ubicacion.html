@@ -13,11 +13,15 @@
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
+	<a-assets>
+<a-asset-item id="modelo2" src="corona_extra.glb"></a-asset-item>
+</a-assets>
     <a-scene
         vr-mode-ui="enabled: false"
 		embedded
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-        <a-entity geometry="primitive: box" rotation="0 180 0" scale="0.15 0.15 0.15" gps-entity-place="longitude: 20.398404; latitude: -101.223234;"/>
+       <a-entity
+gltf-model="#modelo2" scale=".05 .05 .05" rotation="-80 -150 150" position=".5 0 0" class="clickable" gesture-handler</a-entity>
         <a-camera gps-camera rotation-reader></a-camera>
 	</a-scene>
 </body>
