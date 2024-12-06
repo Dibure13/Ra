@@ -36,7 +36,7 @@ sound="src: #audio_mx; autoplay: false; volume: 10">
 <a-marker type="barcode" value="13" raycaster="objects: .clickable" emitevents="true"
 cursor="fuse: false; rayOrigin: mouse;">
 <a-entity
-gltf-model="#modelo2" scale=".4 .4 .4" rotation="0 0 0" position="0 0 0" class="clickable" gesture-handler
+gltf-model="#modelo2" scale=".1 .1 .1" rotation="0 0 0" position="-90 0 0" class="clickable" gesture-handler
 sound="src: #audio_vr; autoplay: false; volume: 10">
 </a-entity>
 </a-marker>
@@ -44,7 +44,7 @@ sound="src: #audio_vr; autoplay: false; volume: 10">
 <a-marker type="barcode" value="15" raycaster="objects: .clickable" emitevents="true"
 cursor="fuse: false; rayOrigin: mouse;">
 <a-entity
-gltf-model="#modelo3" scale=".1 .1 .1" rotation="0 0 0" position="0 0 0" class="clickable" gesture-handler
+gltf-model="#modelo3" scale=".03 .03 .03" rotation="0 0 0" position="-.5 0 0" class="clickable" gesture-handler
 sound="src: #audio_block; autoplay: false; volume: 10">
 </a-entity>
 </a-marker>
@@ -52,7 +52,7 @@ sound="src: #audio_block; autoplay: false; volume: 10">
 <a-marker type="barcode" value="16" raycaster="objects: .clickable" emitevents="true"
 cursor="fuse: false; rayOrigin: mouse;">
 <a-entity
-gltf-model="#modelo4" scale=".5 .5 .5" rotation="-80 -150 150" position="0 0 0" class="clickable" gesture-handler
+gltf-model="#modelo4" scale=".3 .3 .3" rotation="-80 -150 150" position="0 0 0" class="clickable" gesture-handler
 sound="src: #audio_simi; autoplay: false; volume: 10">
 </a-entity>
 </a-marker>
@@ -89,12 +89,12 @@ sound="src: #audio_simi; autoplay: false; volume: 10">
     });
 
     
-    document.querySelector('[value="16"]').addEventListener('markerFound', function () {
+    document.querySelector('[value="15"]').addEventListener('markerFound', function () {
         audio_block.play();
     });
 
   
-    document.querySelector('[value="16"]').addEventListener('markerLost', function () {
+    document.querySelector('[value="15"]').addEventListener('markerLost', function () {
         audio_block.pause();
         audio_block.currentTime = 0;
     });
