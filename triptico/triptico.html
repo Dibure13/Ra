@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+<script src="gesture-detector.js"></script>
+<script src="gesture-handler.js"></script>
+</head>
+<body style="margin : 0px; overflow: hidden;">
+
+<a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false; detectionMode:mono_and_matrix; matrixCodeType: 3x3;"
+renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector 
+id="scene">
+
+<a-assets>
+<a-asset-item id="modelo" src="Lego.glb"></a-asset-item>
+<a-asset-item id="modelo2" src="pico4_low_poly_vr_headset.glb"></a-asset-item>
+<a-asset-item id="modelo3" src="minecraft_command_block.glb"></a-asset-item>
+<a-asset-item id="modelo4" src="peluche_de_dr._simi.glb"></a-asset-item>
+
+<audio id="audio_lego" src="The Lego Movie - Wildstyle Explains [BXQkXzd-R9Y].mp3" preload="auto"></audio>
+<audio id="audio_vr" src="has_virus.MP3" preload="auto"></audio>
+<audio id="audio_block" src="C418 - Sweden - Minecraft Volume Alpha_aBkTkxKDduc.mp3" preload="auto"></audio>
+<audio id="audio_simi" src="Buen Lunes - Farmacias Similares [dYAaRBjoaCA].mp3" preload="auto"></audio>
+
+</a-assets>
+
+<a-marker type="barcode" value="11" raycaster="objects: .clickable" emitevents="true"
+cursor="fuse: false; rayOrigin: mouse;">
+<a-entity
+gltf-model="#modelo" scale="1 1 1" rotation="0 0 0" position="0 0 0" class="clickable" gesture-handler
+sound="src: #audio_lego; autoplay: false; volume: 10">
+</a-entity>
+</a-marker>
+
+<a-marker type="barcode" value="13" raycaster="objects: .clickable" emitevents="true"
+cursor="fuse: false; rayOrigin: mouse;">
+<a-entity
+gltf-model="#modelo2" scale="1 1 1" rotation="0 0 0" position="0 0 0" class="clickable" gesture-handler
+sound="src: #audio_vr; autoplay: false; volume: 10">
+</a-entity>
+</a-marker>
+
+<a-marker type="barcode" value="15" raycaster="objects: .clickable" emitevents="true"
+cursor="fuse: false; rayOrigin: mouse;">
+<a-entity
+gltf-model="#modelo3" scale="1 1 1" rotation="0 0 0" position="0 0 0" class="clickable" gesture-handler
+sound="src: #audio_block; autoplay: false; volume: 10">
+</a-entity>
+</a-marker>
+
+<a-marker type="barcode" value="16" raycaster="objects: .clickable" emitevents="true"
+cursor="fuse: false; rayOrigin: mouse;">
+<a-entity
+gltf-model="#modelo4" scale="1 1 1" rotation="0 0 0" position="0 0 0" class="clickable" gesture-handler
+sound="src: #audio_simi; autoplay: false; volume: 10">
+</a-entity>
+</a-marker>
+
+<a-entity camera></a-entity>
+</a-scene>
+
+<script>
+    var audio_oxxo = document.getElementById('audio_oxxo');
+    var audio_amlo = document.getElementById('audio_amlo');
+    var audio_micro = document.getElementById('audio_micro');
+    var audio_mochila = document.getElementById('audio_mochila');
+
+   
+    document.querySelector('[value="16"]').addEventListener('markerFound', function () {
+        audio_oxxo.play();
+    });
+
+    
+    document.querySelector('[value="16"]').addEventListener('markerLost', function () {
+        audio_oxxo.pause();
+        audio_oxxo.currentTime = 0; // reiniciar el audio desde el inicio
+    });
+
+    
+    document.querySelector('[value="13"]').addEventListener('markerFound', function () {
+        audio_amlo.play();
+    });
+
+  
+    document.querySelector('[value="13"]').addEventListener('markerLost', function () {
+        audio_amlo.pause();
+        audio_amlo.currentTime = 0;
+    });
+
+    
+    document.querySelector('[value="16"]').addEventListener('markerFound', function () {
+        audio_micro.play();
+    });
+
+  
+    document.querySelector('[value="16"]').addEventListener('markerLost', function () {
+        audio_micro.pause();
+        audio_micro.currentTime = 0;
+    });
+
+    document.querySelector('[value="11"]').addEventListener('markerFound', function () {
+        audio_botarga.play();
+    });
+
+  
+    document.querySelector('[value="11"]').addEventListener('markerLost', function () {
+        audio_botarga.pause();
+        audio_botarga.currentTime = 0;
+    });
+
+</script>
+</body>
+</html>
